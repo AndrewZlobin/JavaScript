@@ -7,7 +7,7 @@ let length = 10;
 //Зададим переменную для площади параллелепипеда, посчитаем её и выведем в консоль
 
 let cuboidSquare;
-cuboidSquare = height * width * length; // 750
+cuboidSquare = 2 * (height * width + width * length + height * length); // 550
 console.log ("Площадь параллелепипеда равна " + cuboidSquare);
 
 //Узнаем, что больше - ширина или высота у параллелепипеда
@@ -22,16 +22,25 @@ let gardenSquare = '10 sotka';
 gardenSquare = parseInt(gardenSquare);
 gardenSquare *= 100;
 gardenSquare = parseInt(gardenSquare);
-console.log (gardenSquare);
+console.log ("Площадь участка: " + gardenSquare + " квадратных метров");
 
-//Посчитаем площадь грядок
+//Посчитаем площадь грядки
 let gardenBedSquare = 15 * 25;
-console.log (gardenBedSquare)
+console.log ("Одна грядка занимает " + gardenBedSquare + " квадратных метров")
 
-//Найдем, сколько осталось свободных м2.
+//Найдем максимальное количество грядок.
 
-let squareFree = gardenSquare - gardenBedSquare;
-console.log ('На участке осталось' + squareFree + "свободных квадратных метров");
+let maximumGardenBedSquare = gardenSquare / gardenBedSquare;
+console.log ("Грядок можно разместить на участке: " + parseInt(maximumGardenBedSquare));
+
+//Найдем общую площадь, занимаемую всеми грядками
+
+let sumGardenBedSquare = gardenBedSquare * (parseInt(maximumGardenBedSquare));
+
+//Найдем оставшуюся свободную площадь на участке
+
+let leftSpace = gardenSquare - sumGardenBedSquare
+console.log ("Свободных квадратных метров осталось на участке: " + leftSpace);
 
 console.log ("Найдите площадь овального кольца, полученного из овала площадью 15 дм2 вырезанием овала площадью 600 см2.");
 
@@ -47,13 +56,15 @@ console.log ("Площадь овального кольца: " + ellipseSquare 
 
 console.log ("Переопределить значения переменных X и Y так, чтобы значение X оказалось меньшим, а Y — большим.");
 //Зададим переменные X и Y
-let variableX = 15;
-let variableY = 200;
+variableX = 15;
+variableY = 200;
+console.log ("Переменная X сейчас имеет значение " + variableX + ", а переменная Y имеет значение " + variableY);
 
-//Зададим переопределение переменных через тернарный оператор и выведем ответ в консоль
+//Поменяем значения местами
 
-let redefinition =(Math.abs(variableX) > Math.abs (variableY)) ? "X больше Y" : (Math.abs(variableX) < Math.abs (variableY)) ? "Y больше X" : "X равен Y";
-console.log("Результат переопределения переменных X и Y: " + redefinition);
+variableX = 200;
+variableY = 15;
+console.log ("Теперь переменная X приняла значение " + variableX + ", а переменная Y приняла значение " + variableY);
 
 console.log ("Вывести в консоль ближайшее к 10 из двух чисел, записанных в переменные m и n. Например, среди чисел 8.5 и 11.45 ближайшее к десяти 11.45.");
 
