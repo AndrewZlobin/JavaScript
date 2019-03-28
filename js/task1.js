@@ -56,15 +56,16 @@ console.log ("Площадь овального кольца: " + ellipseSquare 
 
 console.log ("Переопределить значения переменных X и Y так, чтобы значение X оказалось меньшим, а Y — большим.");
 //Зададим переменные X и Y
-let variableX = 15;
-let variableY = 200;
+let variableX, variableY;
+variableX= 105;
+variableY = 1;
 console.log ("Переменная X сейчас имеет значение " + variableX + ", а переменная Y имеет значение " + variableY);
 
-//Переменную X разделим на 3, переменную Y умножим на 3
+//Переопределение переменных
 
-variableX /= 3;
-variableY *= 3;
-console.log ("Теперь переменная X приняла значение " + variableX + ", а переменная Y приняла значение " + variableY);
+let redefinitionXY = (variableX > variableY) ? "Теперь переменная X больше и приняла значение " + variableY :
+                    (variableX < variableY) ? "Y и так большая переменная и имеет значение " + variableY : "Переменная X равна переменной Y";
+console.log (redefinitionXY);
 
 console.log ("Вывести в консоль ближайшее к 10 из двух чисел, записанных в переменные m и n. Например, среди чисел 8.5 и 11.45 ближайшее к десяти 11.45.");
 
