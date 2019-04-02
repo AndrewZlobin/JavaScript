@@ -3,7 +3,7 @@
 
 function getSumOfNumerals(N) {
     if (N < 1) {
-        return;
+        return false;
     }
     let variable = 0;
     variable += (N%10) + getSumOfNumerals(Math.floor(N/10));

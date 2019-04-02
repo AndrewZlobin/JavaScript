@@ -8,18 +8,20 @@ function getDeclension(num) {
     if (num === 0) {
         console.log("Правильно будет: " + num + " " + testWord + "ов");
         return;
-    } else if ( num >= 11 && num <=20) {
-        console.log("Правильно будет: " + num + " " + testWord + "ов");
-        return;
-    } else if (num % 10 === 1) {
-        console.log("Правильно будет: " + num + " " + testWord);
-        return;
-    } else if (num % 10 === 2 || num % 10 === 3 || num % 10 === 4) {
-        console.log("Правильно будет: " + num + " " + testWord + 'а');
-        return;
-    } else {
-        console.log("Правильно будет: " + num + " " + testWord + "ов");
+    }
+    if ( num >= 11 && num <=20) {
+        return "Правильно будет: " + num + " " + testWord + "ов";
         return;
     }
+    if (num % 10 === 1) {
+        console.log("Правильно будет: " + num + " " + testWord);
+        return;
+    }
+    if (num % 10 === 2 || num % 10 === 3 || num % 10 === 4) {
+        console.log("Правильно будет: " + num + " " + testWord + 'а');
+        return;
+    }
+        console.log("Правильно будет: " + num + " " + testWord + "ов");
+        return;
 }
-(getDeclension(999));
+(getDeclension(243));

@@ -10,7 +10,7 @@ function range(arrStart, arrEnd, arrStep) {
         return;
     }
 
-    if (typeof arrStep == "undefined") {
+    if (!arrStep) {
         console.log ("Шаг не объявлен!\nПроверьте входные данные!");
         return false;
     }
