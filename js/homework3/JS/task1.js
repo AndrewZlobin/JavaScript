@@ -1,8 +1,8 @@
 /*Написать функцию сравнения двух массивов.
 Функция принимает на вход два массива, сравнивает их и возвращает true, если массивы равны и false, если не равны.*/
 
-let someArr1 = [4,3,2,1];
-let someArr2 = [1,2,3,4];
+let someArr1 = [1,2,3];
+let someArr2 = [1,2,4];
 
 function arrayToCompare(arrOne, arrTwo) {
     if (!Array.isArray(arrOne) || !Array.isArray(arrTwo)) {
@@ -15,15 +15,17 @@ function arrayToCompare(arrOne, arrTwo) {
         return false;
     }
 
-    for (let i = 0; i < arrOne.length; i++) {
-        if (arrOne[i] === arrTwo[i]) {
-            console.log("Массивы совпадают!");
-            return true;
-        } else {
+
+
+     for (let i = 0; i < arrOne.length; i++) {
+        if (arrOne[i] !== arrTwo[i]) {
             console.log("Массивы не совпадают!");
-            return false
+            return false;
         }
+
     }
+    console.log("Массивы совпадают!");
+    return true;
 }
 
 arrayToCompare(someArr1, someArr2);
