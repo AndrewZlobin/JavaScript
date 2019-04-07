@@ -34,18 +34,26 @@ let goods = {
 //console.log(goods.flute.price);
 
 function priceFromTo(obj, from, to) {
-    let objectInObject;
-    let arrOfObjects = [];
-    let arrayOfNewObjectsToObject;
-    for (let mainPropName in obj) {
-        objectInObject = obj[mainPropName];
-        if (objectInObject.price >= from && objectInObject.price <= to) {
-            arrOfObjects.push(objectInObject);
+    let resObj = {};
+    for (let key in obj) {
+        if (obj[key]["price"] >= from && obj[key]["price"] <= to) {
+            resObj[key] = obj[key];
         }
-        arrayOfNewObjectsToObject = Object.assign({}, arrOfObjects);
-        //console.log(arrOfObjects);
     }
-    return arrayOfNewObjectsToObject;
+    return resObj;
+
+    // let objectInObject;
+    // let arrOfObjects = [];
+    // let arrayOfNewObjectsToObject;
+    // for (let mainPropName in obj) {
+    //     objectInObject = obj[mainPropName];
+    //     if (objectInObject.price >= from && objectInObject.price <= to) {
+    //         arrOfObjects.push(objectInObject);
+    //     }
+    //     arrayOfNewObjectsToObject = Object.assign({}, arrOfObjects);
+    //     //console.log(arrOfObjects);
+    // }
+    // return arrayOfNewObjectsToObject;
 }
 
-console.log(priceFromTo(goods, 500, 1500));
+console.log(priceFromTo(goods, 1500, 4000));

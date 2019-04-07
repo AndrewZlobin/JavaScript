@@ -32,9 +32,9 @@ let goods = {
     }
 };
 
+
 function addToCart(obj, title, countToCart) {
-    title = prompt("Введите название товара");
-    countToCart = prompt("Введите количество требуемого товара");
+
     let objectInObject;
     for (let mainPropName in obj) {
         objectInObject = obj[mainPropName];
@@ -44,7 +44,7 @@ function addToCart(obj, title, countToCart) {
         }
         if (objectInObject.title === title) {
             if (objectInObject.count < countToCart) {
-                alert("В таком количестве товар отсутствует, иммется только\n" + objectInObject.count + " единиц товара " + objectInObject.title);
+                alert("В таком количестве товар отсутствует, имется только\n" + objectInObject.count + " единиц товара " + objectInObject.title);
             } else {
                 alert("Товар под названием \n" + objectInObject.title + "\nдобавлен в корзину в количестве\n" + countToCart);
                 obj[mainPropName].count -= countToCart;
@@ -54,5 +54,8 @@ function addToCart(obj, title, countToCart) {
         }
     }
 }
+
+let title = prompt("Введите название товара");
+let countToCart = prompt("Введите количество требуемого товара");
 
 console.log(addToCart(goods, "Арфа", 4));
