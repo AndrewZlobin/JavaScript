@@ -1,1 +1,1 @@
-# JavaScript
+# JavaScript homework (IFMO web development)
