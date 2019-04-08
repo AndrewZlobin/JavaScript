@@ -8,14 +8,13 @@ let c = 50;
 
 let triangle = [];
 triangle.push(a, b, c);
-triangle.sort();
+//triangle.sort();
 console.log(triangle);
 
-if (triangle[0] + triangle[1] > triangle[2]) {
-    console.log(triangle[0] + triangle[1] < triangle[2]);
+if (triangle[0] + triangle[1] < triangle[2]) {
     console.log("Что-то не так, такого треугольника быть не может!");
 } else {
-    console.log(triangle[0] + triangle[1] < triangle[2]);
+    console.log(triangle[0] + triangle[1] > triangle[2]);
 
     let big = (triangle[0] ** 2) + (triangle[1] ** 2);
     console.log(big);
