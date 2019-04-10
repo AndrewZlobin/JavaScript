@@ -1,0 +1,27 @@
+.header {
+    text-align: center;
+    font-family: "Apple Color Emoji";
+    font-weight: lighter;
+    font-size: 8vw;
+    color: darkgoldenrod;
+    margin: 0;
+}
+
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50vw;
+}
+
+.footer {
+    text-align:  right;
+    font-family: Broadway;
+    font-weight: bold;
+    font-size: 5vw;
+    color: darkred;
+    border: black solid 2px;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 0 0 0 75vw;
+}
