@@ -8,19 +8,19 @@ let books = [
 ];
 
 
-function sortArrayByTitle(a, b) {
-    // for (let i = 0; i < arr.length; i++) {
+function sortBooks(arr) {
+    arr.sort(function (a, b) {
         if (a.title < b.title) {
-            //arr[i].sort();
-            //return arr[i];
             return -1;
         }
         if (a.title > b.title) {
-            //return arr[i].author.sort();
             return 1;
         }
         return 0;
-    // }
+    });
+    return arr;
 }
 
-console.log(books.sort(sortArrayByTitle));
+
+
+console.log(sortBooks(books));
