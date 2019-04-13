@@ -43,6 +43,7 @@ function createHtmlFromArray(arr) {
     for (let i = 0; i < objectKeys.length; i++) {
         let cellKeys = rowKeys.insertCell(i);
         cellKeys.innerText = objectKeys[i];
+        cellKeys.setAttribute("class", "header-row");
         console.log(cellKeys);
     }
     for (let i = 0; i < arr.length; i++) {
@@ -51,6 +52,7 @@ function createHtmlFromArray(arr) {
         let object = arr[i];
         for (let key in object) {
             cellOther = rowOther.insertCell();
+            cellOther.setAttribute("class", "other-elems");
             cellOther.innerText = object[key];
         }
     }
