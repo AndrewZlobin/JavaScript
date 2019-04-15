@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>События формы</title>
+    <link rel="stylesheet" href="CSS/task-2-style.css">
+</head>
+<body>
+<form name="homework">
+
+    <fieldset>
+        <legend>Текстовый ввод</legend>
+        <div>
+            <label for="login">Введите логин</label>
+            <input name="login" id="login" type="text">
+            <span class="info-block">
+                Логин должен содержать минимум 3 символа
+            </span>
+        </div>
+        <div>
+            <label for="pwd">Введите пароль</label>
+            <input name="pwd" id="pwd" type="password">
+            <span class="info-block">
+                Пароль должен содержать минимум 6 символа
+            </span>
+        </div>
+    </fieldset>
+
+    <fieldset name="checkbox_fieldset">
+        <legend>Checkbox | Radio</legend>
+        <div>
+            <p>Выбор цвета</p>
+            <label><input value="lightblue" name="radiocolor" type="radio">Синий</label>
+            <label><input value="yellow" name="radiocolor" type="radio">Желтый</label>
+        </div>
+        <div>
+            <p>Отметьте интересующие языки программирования</p>
+            <label><input value="php" name="proglang[]" type="checkbox">PHP</label>
+            <label><input value="java" name="proglang[]" type="checkbox">Java</label>
+            <label><input value="python" name="proglang[]" type="checkbox">Python</label>
+            <label><input value="ruby" name="proglang[]" type="checkbox">Ruby</label>
+        </div>
+        <div>
+            <label><input type="checkbox" name="turndisabled">Отметьте, если указать другую информацию?</label>
+            <input type="text" name="textarea" disabled>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Поля со списком</legend>
+        <label for="countries">Выбор страны</label>
+        <select multiple id="countries" name="countries">
+            <optgroup label="Европа">
+                <option value="spain">Испания</option>
+                <option value="denmark">Дания</option>
+                <option value="switzerland">Швейцария</option>
+            </optgroup>
+
+            <optgroup label="Африка">
+                <option value="egypt">Египет</option>
+                <option value="zimbabwe">Зимбабве</option>
+                <option value="kenya">Кения</option>
+            </optgroup>
+        </select>
+    </fieldset>
+
+    <input type="submit" value="Отправить">
+    <input type="reset" value="Очистить">
+</form>
+
+
+
+<script src="JS/task2-forms.js"></script>
+</body>
+</html>
