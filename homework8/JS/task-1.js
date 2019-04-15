@@ -8,33 +8,33 @@ function submitNewComment(event) {
     let com = formData.get("text");
 
     if (com) {
-        let span = document.createElement("span");
-        console.log(span);
+        let spanContainerForComments = document.createElement("spanContainerForComments");
+        console.log(spanContainerForComments);
 
         let avatarOfComment = document.createElement("img");
         avatarOfComment.setAttribute("height", "50px");
         avatarOfComment.setAttribute("weight", "50px");
         avatarOfComment.setAttribute("src", "img/anapa_park.jpg");
-        span.appendChild(avatarOfComment);
+        spanContainerForComments.appendChild(avatarOfComment);
 
-        let comment = mainForm.elements.text.value;
-        console.log(comment);
+        let textFromComment = mainForm.elements.text.value;
+        console.log(textFromComment);
 
         let newComment = document.createElement("textarea");
-        newComment.innerText=comment;
+        newComment.innerText=textFromComment;
         newComment.setAttribute("class", "new-comment");
         newComment.setAttribute("rows", "8");
         newComment.setAttribute("cols", "75");
         console.log(newComment);
-        span.appendChild(newComment);
+        spanContainerForComments.appendChild(newComment);
 
         let timeDate = document.createElement("p");
         let date = new Date();
         timeDate.innerText = date;
         console.log(timeDate);
-        span.appendChild(timeDate);
+        spanContainerForComments.appendChild(timeDate);
 
-        document.body.appendChild(span);
+        document.body.appendChild(spanContainerForComments);
     }
 
 }
