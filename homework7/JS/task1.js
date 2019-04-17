@@ -69,7 +69,7 @@ function newTableGenerator (arr) {
     let cellElems = document.getElementsByClassName("content-cell");
     console.log(cellElems);
 
-    for (let i = 0; i < cellElems.length; i++) {
+    for (let i = 0; i < clickable.length; i++) {
         //clickable[i].addEventListener("click", someFunction);
         clickable[i].addEventListener("click", someFunction);
 
@@ -90,7 +90,7 @@ function newTableGenerator (arr) {
                 return 0;
             });
             for (let i = 0; i < htmlDocumentToArray.length; i++) {
-                tbody.remove();
+
 
                 let newTBody = document.createElement("tbody");
                 createTable.appendChild(newTBody);
@@ -101,7 +101,9 @@ function newTableGenerator (arr) {
                     newCell.innerText = htmlDocumentToArray[i][prop];
                     newCell.classList.add('content-cell');
                     console.log(htmlDocumentToArray[i][prop]);
+                    tbody.remove();
                 }
+
 
             }
         }
