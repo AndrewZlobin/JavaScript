@@ -4,7 +4,7 @@ console.log(colorRadio);
 
 //Измение цвета фона при нажатии на радиокнопку
 
-form.addEventListener("click", changeColorOfFieldset);
+form.elements.checkbox_fieldset.addEventListener("click", changeColorOfFieldset);
 
 function changeColorOfFieldset() {
     document.getElementsByName("radiocolor").checked = true;
@@ -12,7 +12,7 @@ function changeColorOfFieldset() {
 }
 
 //Отображение выбранных ЯП в консоли
-form.addEventListener("click", addProgLangsToConsole);
+form.elements.checkbox_fieldset.addEventListener("click", addProgLangsToConsole);
 
 function addProgLangsToConsole() {
     let choosedProgLangs = document.getElementsByName("proglang[]");
@@ -32,21 +32,16 @@ function addProgLangsToConsole() {
 
 //После клика на чекбокс поле становится активным
 
-form.addEventListener('click', turnUnDisabled);
+form.elements.checkbox_fieldset.addEventListener('click', turnUnDisabled);
 
-function turnUnDisabled() {
-    let turnDisabled = document.getElementsByName("turndisabled");
-    turnDisabled.checked = false;
-    console.log(turnDisabled);
-    console.log(turnDisabled.checked);
-    console.log(!(turnDisabled.checked));
-     if (!(turnDisabled)) {
-         let textarea = document.getElementsByName('textarea');
-         textarea.disabled = false;
-         console.log(textarea);
-     }
-     if (turnDisabled.checked === false) {
-         document.getElementsByName('textarea').disabled = false;
-     }
+function turnUnDisabled(event) {
+    let eventTarget = event.target;
+    //console.log(eventTarget);
+    let turnDisabled = form.elements.textarea;
+    //console.log(turnDisabled);
+    if (eventTarget.checked) {
+        turnDisabled.removeAttribute("disabled");
+    } else {
+        turnDisabled.setAttribute("disabled", 'disabled');
+    }
 }
-
