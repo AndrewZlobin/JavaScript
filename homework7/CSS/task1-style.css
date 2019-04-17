@@ -1,0 +1,32 @@
+.header-row {
+    text-align: center;
+    background-color: lightblue;
+    font-size: 18px;
+    color: darkred;
+}
+
+.other-elems {
+    text-align: center;
+    font-weight: bold;
+    background-color: lightsalmon;
+    color: darkslateblue;
+    font-size: 14px;
+}
+
+.caption-cell {
+    background-color: darkgray;
+    color: darkred;
+    font-weight: lighter;
+    font-size: 4vw;
+    padding: 2vw;
+    margin: 2vw;
+}
+
+.content-cell {
+    background-color: darkred;
+    color: black;
+    font-weight: bold;
+    font-size: 3vw;
+    padding: 1vw;
+    margin: 1vw;
+}
