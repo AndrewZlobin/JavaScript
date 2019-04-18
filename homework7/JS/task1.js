@@ -109,50 +109,6 @@ function newTableGenerator (arr) {
         }
     }
 }
-
-/* for (let i=0; i<=(sortTable.length-1); i++) {
-            let tr=document.createElement('tr');
-            //самовыпил строк
-            let removeTr=document.getElementById(i);
-            removeTr.remove();
-
-            for (let key in sortTable[i]){
-                let td=document.createElement('td');
-                td.innerText=sortTable[i][key];
-                tr.appendChild(td);
-            }
-            tr.setAttribute('id',i);
-            table.appendChild(tr);*/
-
-
-
-newTableGenerator(articles);
-
-/*function sortBooks(arr) {
-    arr.sort(function (a, b) {
-        if (a.title < b.title) {
-            return -1;
-        }
-        if (a.title > b.title) {
-            return 1;
-        }
-        return 0;
-    });
-    return arr;
-}*/
-
-
-
-//     genContent: function () {
-//         for (let i = 0; i < this.data.length; i++) {
-//             let row = this.table.insertRow();
-//             for (let key in this.data[i]) {
-//                 let cell = row.insertCell();
-//                 cell.innerText = this.data[i][key];
-//                 cell.classList.add('content-cell');
-//             }
-//         }
-//     },
 //     getTable: function (arr_data) {
 //         this.init(arr_data);
 //         this.genCaption();
