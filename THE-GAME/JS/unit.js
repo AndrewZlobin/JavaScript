@@ -13,14 +13,6 @@ class Unit {
         this._engine = engine;
         // console.log(engine._canvas);
     }
-
-    // setEnemies(enemies){
-    //     this._enemies = enemies;
-    // }
-    //
-    // getEnemies(){
-    //     return this._enemies;
-    // }
 }
 
 class Player extends Unit {
@@ -28,11 +20,6 @@ class Player extends Unit {
         super(name);
         this._x = 25;
         this._y = 25;
-
-        // this._x = game.randomAmount(25, (game._canvas.width - this._dw));
-        // this._y = game.randomAmount(25, this._dh);
-        // this._dw = 64;
-        // this._dh = 64;
         this._imgPlayer = new Image();
     }
 
@@ -120,28 +107,12 @@ class Player extends Unit {
 class Enemy extends Unit{
     constructor (name, x, y) {
         super (name);
-
         this._x = x;
         this._y = y;
-
-        // this._x = game.randomAmount(25, game._canvas.width);
-        // this._y = game.randomAmount(100, game._canvas.height);
-        // this._imgPlayer = new Image();
     }
 
-
     regenerateEnemy() {
-
         enemies.push(new Enemy("enemy0", game.randomAmount(25, 750), game.randomAmount(25, 550)));
-
-        // game.foesImgGenerate();
-
         console.log(enemies);
-        // console.log(enemy);
-
-        // console.log(enemies[1]['_name'] === "enemy" + 1);
-        // console.log(enemies[2]['_name']);
-
-        }
-
+    }
 }
