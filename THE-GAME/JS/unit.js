@@ -45,13 +45,13 @@ class Player extends Unit {
         //движение игрока
 
         if (event.code === "KeyD") {
-            this._x += 5;
+            this._x += 10;
         } else if (event.code === "KeyA") {
-            this._x -= 5;
+            this._x -= 10;
         } else if (event.code === "KeyS") {
-            this._y += 5;
+            this._y += 10;
         } else if (event.code === "KeyW") {
-            this._y -= 5;
+            this._y -= 10;
         }
 
         //ограничение прохода игрока за пределы поля
@@ -91,7 +91,12 @@ class Player extends Unit {
 
                 this._resultCounter++;
 
-                console.log(this._resultCounter);
+                if (this._resultCounter%10 === 0 || this._resultCounter%10 === 5) {
+                    let devilScream = new Audio();
+                    devilScream.src = 'mp3/scream.mp3';
+                    devilScream.autoplay = true;
+                }
+                console.log(this._resultCounter%10);
 
                 game._context.fillRect(enemies[i]['_x'], enemies[i]['_y'], enemies[i]['_dw'], enemies[i]['_dh']);
                 console.log(enemies);
