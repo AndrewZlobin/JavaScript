@@ -5,6 +5,8 @@ class FormValidator{
         this._form.addEventListener('submit', this.checkSome.bind(this));
         this._err = [];
         console.log(this._validElems[0].placeholder);
+        this._errorForLogin = document.getElementById("error-for-login");
+        this._errorForPassword = document.getElementById("error-for-pwd")
     };
     addRules(rules){
         this._rules = rules.rules;
@@ -29,14 +31,18 @@ class FormValidator{
 
             if (this._validElems[i].name === 'pwd' &&
                 !this._rules[this._validElems[i].name].test(this._validElems[i].value)){
-                    alert(this._validElems[i].name + " is incorrect!\n" + this._messages.pwd);
+                    // alert(this._validElems[i].name + " is incorrect!\n" + this._messages.pwd);
                     // console.log(errorForPwd);
+                this._errorForPassword.innerText = this._messages.pwd;
+                document.getElementsByName("pwd")[0].focus();
                 }
 
             if (this._validElems[i].name === 'login' &&
                 !this._rules[this._validElems[i].name].test(this._validElems[i].value)){
-                alert(this._validElems[i].name + " is incorrect!\n" + this._messages.login);
+                // alert(this._validElems[i].name + " is incorrect!\n" + this._messages.login);
                 // console.log(this._validElems[i].name)
+                this._errorForLogin.innerText = this._messages.login;
+                document.getElementsByName("login")[0].focus();
             }
 
             // if (!this._rules[this._validElems[i].name].test(this._validElems[i].value)){
