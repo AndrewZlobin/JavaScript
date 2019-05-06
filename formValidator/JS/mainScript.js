@@ -6,7 +6,7 @@ class FormValidator{
         this._err = [];
         console.log(this._validElems[0].placeholder);
         this._errorForLogin = document.getElementById("error-for-login");
-        this._errorForPassword = document.getElementById("error-for-pwd")
+        this._errorForPassword = document.getElementById("error-for-pwd");
     };
     addRules(rules){
         this._rules = rules.rules;
@@ -33,7 +33,13 @@ class FormValidator{
                 !this._rules[this._validElems[i].name].test(this._validElems[i].value)){
                     // alert(this._validElems[i].name + " is incorrect!\n" + this._messages.pwd);
                     // console.log(errorForPwd);
-                this._errorForPassword.innerText = this._messages.pwd;
+                let notificationForPassword = document.createElement("blockquote");
+                notificationForPassword.innerHTML = this._messages.pwd;
+                document.body.appendChild(notificationForPassword);
+
+                setTimeout(function () {
+                    notificationForPassword.parentNode.removeChild(notificationForPassword)
+                }, 4000);
                 document.getElementsByName("pwd")[0].focus();
                 }
 
@@ -41,7 +47,13 @@ class FormValidator{
                 !this._rules[this._validElems[i].name].test(this._validElems[i].value)){
                 // alert(this._validElems[i].name + " is incorrect!\n" + this._messages.login);
                 // console.log(this._validElems[i].name)
-                this._errorForLogin.innerText = this._messages.login;
+                let notificationForLogin = document.createElement("blockquote");
+                notificationForLogin.innerHTML = this._messages.login;
+                document.body.appendChild(notificationForLogin);
+
+                setTimeout(function () {
+                    notificationForLogin.parentNode.removeChild(notificationForLogin)
+                }, 4000);
                 document.getElementsByName("login")[0].focus();
             }
 
