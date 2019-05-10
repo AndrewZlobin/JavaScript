@@ -1,7 +1,7 @@
 let form = document.forms.someForm;
-console.log(form);
+//console.log(form);
 let formValidator = new FormValidator(form);
-console.log(formValidator);
+//console.log(formValidator);
 
 formValidator.addRules({
     rules: {
@@ -18,12 +18,8 @@ form.addEventListener("submit", noErorrs);
 
 function noErorrs() {
     if (formValidator.isValid()) {
-        alert("Всё хорошо");
+        console.info("Validation has no errors!");
 
     }
 }
-
-console.log(formValidator._err);
-
-// formValidator.some();
-// formValidator.validate();
+//console.log(formValidator._err);

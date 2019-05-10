@@ -4,67 +4,50 @@ class FormValidator{
         this._validElems = document.querySelectorAll(".validate");
         this._form.addEventListener('submit', this.checkSome.bind(this));
         this._err = [];
-        console.log(this._validElems[0].placeholder);
-        this._errorForLogin = document.getElementById("error-for-login");
-        this._errorForPassword = document.getElementById("error-for-pwd");
+
+        //console.log(document.getElementsByName("login").nextElementSibling);
+        //console.log(document.getElementsByName("someForm"));
     };
     addRules(rules){
         this._rules = rules.rules;
         this._messages = rules.messages;
-        // console.log(this._rules);
-        // console.log(this._rules[this._validElems[0].name].test(this._validElems[0].value));
+
+        //console.log(form.firstChild);
     };
 
     checkSome(event) {
         event.preventDefault();
 
-        // let errorForLogin = document.getElementsByClassName("error-for-login");
-        // let errorForPwd = document.getElementsByClassName("error-for-pwd");
-        // console.warn(errorForLogin, errorForPwd);
-
         for (let i = 0; i < this._validElems.length; i++){
             if (!this._rules[this._validElems[i].name].test(this._validElems[i].value)) {
+
+                /*
+                Сохранения числа ошибок, полученных при заполнении формы, в массив, с выводом в консоль
+                */
                 this._err.push([this._validElems[i].name]);
                 console.log(this._err);
                 console.log(this._validElems[i].name);
-            }
 
-            if (this._validElems[i].name === 'pwd' &&
-                !this._rules[this._validElems[i].name].test(this._validElems[i].value)){
-                    // alert(this._validElems[i].name + " is incorrect!\n" + this._messages.pwd);
-                    // console.log(errorForPwd);
-                let notificationForPassword = document.createElement("blockquote");
-                notificationForPassword.innerHTML = this._messages.pwd;
-                document.body.appendChild(notificationForPassword);
+                /*
+                Добавление на html сообщения о том, где и что введено неправильно
+                */
+                let input = document.getElementsByName(this._validElems[i].name);
+                console.log(input[0].parentElement);
 
-                setTimeout(function () {
-                    notificationForPassword.parentNode.removeChild(notificationForPassword)
-                }, 4000);
-                document.getElementsByName("pwd")[0].focus();
-                }
-
-            if (this._validElems[i].name === 'login' &&
-                !this._rules[this._validElems[i].name].test(this._validElems[i].value)){
-                // alert(this._validElems[i].name + " is incorrect!\n" + this._messages.login);
-                // console.log(this._validElems[i].name)
-                let notificationForLogin = document.createElement("blockquote");
-                notificationForLogin.innerHTML = this._messages.login;
-                document.body.appendChild(notificationForLogin);
+                let notification = document.createElement("blockquote");
+                notification.innerHTML = this._messages[this._validElems[i].name];
+                // input[0].parentElement.insertBefore(notification, input[0].nextElementSibling);
+                input[0].parentElement.after(notification);
+                //console.log(typeof input[0].parentElement);
+                /*
+                Спустя 4 секунды сообщение исчезает благодаря SetTimeout
+                */
 
                 setTimeout(function () {
-                    notificationForLogin.parentNode.removeChild(notificationForLogin)
+                    notification.parentNode.removeChild(notification)
                 }, 4000);
-                document.getElementsByName("login")[0].focus();
+                document.getElementsByName(this._validElems[i].name)[0].focus();
             }
-
-            // if (!this._rules[this._validElems[i].name].test(this._validElems[i].value)){
-            //     alert(this._validElems[i].name + " is incorrect!");
-            // }
-                // if (!this._rules[this._validElems[i].name].test(this._validElems[i].value)){
-                //     // errorForPwd.innerHTML = this._messages.pwd;
-                //     console.log(this._validElems[i].name);
-                //     alert(this._validElems[i].name + " is incorrect!");
-                // }
         }
     };
 
