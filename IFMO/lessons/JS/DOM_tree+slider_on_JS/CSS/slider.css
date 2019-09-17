@@ -1,0 +1,43 @@
+.body,
+.slider {
+    margin: 0;
+    padding: 0;
+    /*height: 100vw;*/
+}
+
+img {
+    width: 75vw;
+    height: 75vh;
+}
+
+/*.slider li{*/
+/*    display: none;
+/*}*/
+
+/*.slider li.active{*/
+/*    display: block;*/
+/*}*/
+
+.slider {
+    position: relative;
+}
+
+.slider li{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 3s;
+    transition-timing-function: ease-in-out;
+}
+
+.slider li.active {
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 3s;
+    transition-timing-function: ease-in-out;
+}

@@ -1,0 +1,14 @@
+.header-row {
+    text-align: center;
+    background-color: lightblue;
+    font-size: 18px;
+    color: darkred;
+}
+
+.other-elems {
+    text-align: center;
+    font-weight: bold;
+    background-color: lightsalmon;
+    color: darkslateblue;
+    font-size: 14px;
+}
