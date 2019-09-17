@@ -1,2 +1,4 @@
 /project/node_modules/*
+/project/package-lock.json
 /project_vue/node_modules/*
+/project_vue/package-lock.json
